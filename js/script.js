@@ -10,15 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-const typewriterText = document.getElementById('typewriter');
-if (typewriterText) {
-    let index = 0;
-    function typeWriter() {
-        if (index < text.length) {
-            typewriterText.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100);
+    const typewriterText = document.getElementById('typewriter');
+    const text = 'Common Class Project'; 
+    
+    if (typewriterText) {
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                typewriterText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
         }
+        typeWriter();
     }
-    typeWriter();
-};
+}); 
