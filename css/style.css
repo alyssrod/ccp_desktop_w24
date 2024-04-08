@@ -178,13 +178,13 @@ ol {
         padding: 20px 5%;
     }
     
-    .gallery, {
+    .gallery {
         grid-template-columns: repeat(3, 1fr); 
     }
 }
 
 @media (min-width: 1024px) {
-    .gallery, {
+    .gallery {
         grid-template-columns: repeat(4, 1fr); }
     
     nav ul {
@@ -209,7 +209,7 @@ ol {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .gallery img, img {
+    .gallery img {
         animation-duration: 0.5s; 
     }
 }
