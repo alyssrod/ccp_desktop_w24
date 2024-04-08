@@ -1,7 +1,7 @@
 :root {
     --bg-color: #fffdf5;
     --text-color: #1e1e1e;
-    --visited-link-color: #1e1e1e;
+    --visited-link-color: #555; 
 }
 
 .dark-mode {
@@ -11,8 +11,8 @@
 }
 
 body {
-    font-family: 'Futura', 'roboto', sans-serif;
-    margin: 5px; 
+    font-family: 'Futura', 'Roboto', sans-serif;
+    margin: 5px;
     padding: 5%;
     line-height: 1.5;
     background-color: var(--bg-color);
@@ -23,136 +23,54 @@ body {
 .skip {
     position: absolute;
     left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .skip:focus {
     position: static;
-    display: block;
-    width: 100%;
-    height: 100%;
-    color: var(--text-color);
+    left: auto;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 1000;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #000;
     text-align: center;
-    font-size: 2em;
-    font-family: 'Times New Roman', Times, serif;
 }
 
-nav ul, ul {
-    list-style: none;
-}
-
-nav ul a, a:visited {
+nav ul {
     display: flex;
-    justify-content: space-evenly;
-    padding: 2%;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul a {
     text-decoration: none;
     color: var(--text-color);
+    padding: 10px;
 }
 
-.toggle, .theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2%;
-    margin: 20px;
-}
-
-.theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-}
-
-.theme-switch input, .slider {
-    display: none;
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-}
-
-.slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-}
-
-input:checked + .slider {
-    background-color: #66bb6a;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-h1, h2, h3, p, ol, img, .gallery div {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 2.5em; 
+nav ul a.active, nav ul a:hover {
+    color: var(--visited-link-color);
     font-weight: bold;
-}
-
-h2, h3 {
-    text-align: center;
-    font-size: 2em; 
-}
-
-h3 {
-    font-size: 1.5em; 
-}
-
-p, ul, ol {
-    font-size: 1em; 
-}
-
-ul {
-    list-style: circle;
-    margin-left: 10%;
-}
-
-ol {
-    list-style: decimal;
-    margin-left: 20px;
-}
-
-.active {
-    border: 3px solid var(--text-color);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: underline;
+    background-color: #f0f0f0;
 }
 
 .gallery, .section, .hero, .info, .pets-name-img, .recipe {
     display: grid;
     grid-gap: 20px;
     text-align: center;
+    grid-template-columns: 1fr; 
 }
 
-.gallery img, .gallery3 img, .hero img, .pets-name-img > h2 {
+.gallery img, .hero img, .pets-name-img > h2 {
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     transition: transform 0.25s ease;
 }
 
@@ -174,6 +92,47 @@ ol {
 }
 
 @media (max-width: 599px) {
-    body, .gallery, nav, nav ul, .hero, .info {
-        padding: 10px 0: 
+    h1, h2, h3, p, ol, ul {
+        font-size: 90%;
+    }
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .gallery, .gallery3 {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery, .gallery3 {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+
+    nav ul a {
+        padding: 20px;
+    }
+
+    .hero {
+        grid-template-columns: 0.5fr 1fr;
+    }
+
+    .hero h2, .pets-name-img > h2 {
+        font-size: 4em;
+        padding: 50px;
+    }
+
+    .info, .pets-name-img, .recipe {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery img, .gallery3 img {
+        animation-duration: 0.5s; 
+    }
 } 
