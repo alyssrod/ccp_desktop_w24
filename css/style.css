@@ -163,11 +163,7 @@ img:hover {
         transition:transform 0.25s ease;
     }
 
-    img:hover {
-        -webkit-transform:scale(1.2); /* or some other value */
-    transform:scale(1.2);;
-    }
-
+    
     .info {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
