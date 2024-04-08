@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Futura', 'roboto', sans-serif;
-    margin: 10px;
+    margin: 5px; 
     padding: 5%;
     line-height: 1.5;
     background-color: var(--bg-color);
@@ -109,21 +109,21 @@ h1, h2, h3, p, ol, img, .gallery div {
 
 h1 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.5em; 
     font-weight: bold;
 }
 
 h2, h3 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2em; 
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.5em; 
 }
 
 p, ul, ol {
-    font-size: 1em;
+    font-size: 1em; 
 }
 
 ul {
@@ -150,8 +150,9 @@ ol {
     text-align: center;
 }
 
-.gallery img, .hero img, .pets-name-img > h2 {
+.gallery img, .gallery3 img, .hero img, .pets-name-img > h2 {
     width: 100%;
+    object-fit: cover; 
     transition: transform 0.25s ease;
 }
 
@@ -172,43 +173,7 @@ ol {
     animation-fill-mode: both;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 599px) {
     body, .gallery, nav, nav ul, .hero, .info {
-        padding: 20px 5%;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .gallery {
-        grid-template-columns: repeat(4, 1fr); }
-    
-    nav ul {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    .hero {
-        grid-template-columns: 0.5fr 1fr;
-    }
-    
-    .hero h2, .pets-name-img > h2 {
-        font-size: 4em;
-        padding: 50px;
-    }
-    
-    .info, .pets-name-img, .recipe {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .gallery img {
-        animation-duration: 0.5s; 
-    }
-}
+        padding: 10px 0: 
+} 
