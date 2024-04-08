@@ -96,10 +96,6 @@ img {
 
 }
 
-img:hover {
-    box-shadow: 5px 5px 1px #2e2e2e;
-}
-
 .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -158,11 +154,6 @@ img:hover {
         width: 100%;
         grid-column: 1 / -1;
     }
-
-    img {
-        transition:transform 0.25s ease;
-    }
-
     
     .info {
         display: grid;
