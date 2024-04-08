@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,9 @@
     <title>Home</title>
 </head>
 
-<body class="light-mode">
+<body>
     <header>
-        <a class="skip" href="#main-content">Skip to Main Content</a>
+        <a class="skip" href="#main">Skip to Main Content</a>
         <nav>
             <ul>
                 <li><a class="active" href="index.html">Home</a></li>
@@ -19,19 +20,23 @@
                 <li><a href="travel.html">Travel</a></li>
             </ul>
         </nav>
+
+
+        <h1>Common Class Project</h1>
     </header>
-    <main id="main-content">
-        <div class="theme-switch-wrapper">
-            <label for="checkbox" aria-label="Toggle dark/light theme">
-                Light Mode
-                <input type="checkbox" id="checkbox" class="theme-switch">
-                <span class="slider round"></span>
-                Dark Mode
-            </label>
+    <main id="main">
+        <div class="toggle">
+            <p>Light Mode</p>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <span class="slider round"></span> .
+                </label>
+            </div>
+            <p>Dark Mode</p>
         </div>
-        <h1 id="typewriter-text-index"></h1>
         <div>
-            <p>Welcome to my website, your go-to destination for all things pets, recipes, and travel! Explore a world of captivating content where we cater to your love for furry companions, culinary delights, and globetrotting adventures.</p>
+            <p>Welcome to my website, your go-to destination for all things pets, recipes, and travel! Explore a world of captivating content where we cater to your love for furry companions, culinary delights, and globetrotting adventures. </p>
         </div>
         <div class="section">
             <h2> Overview </h2>
