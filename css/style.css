@@ -1,7 +1,7 @@
 :root {
     --bg-color: #fffdf5;
     --text-color: #1e1e1e;
-    --visited-link-color: #555; 
+    --visited-link-color: #555;
 }
 
 .dark-mode {
@@ -42,97 +42,104 @@ body {
     text-align: center;
 }
 
+/* Styling for navigation menu */
 nav ul {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centered on mobile */
     padding: 0;
     list-style-type: none;
+    margin-top: 20px; /* Adjusted top margin */
 }
 
+/* Style for navigation links */
 nav ul a {
     text-decoration: none;
     color: var(--text-color);
     padding: 10px;
+    text-transform: uppercase; /* Added text styling */
 }
 
-nav ul a.active, nav ul a:hover {
+/* Specific styling for the current page navigation link */
+nav ul a.active {
+    background-color: #084200;
+    color: white;
+    border-radius: 20px; /* Rounded corners like in the provided image */
+}
+
+/* Hover effects for navigation links */
+nav ul a:hover {
     color: var(--visited-link-color);
-    font-weight: bold;
     background-color: #f0f0f0;
 }
 
-.gallery, .section, .hero, .info, .pets-name-img, .recipe {
+/* Grid layout for sections and galleries */
+.gallery, .section, .hero, .info, .pets-name-img, .recipe, .videoclass, .photogallery {
     display: grid;
     grid-gap: 20px;
     text-align: center;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /* Single column layout for mobile */
 }
 
-.gallery img, .hero img, .pets-name-img > h2 {
-    width: 100%;
+/* Responsive images and videos */
+img, video {
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
-    transition: transform 0.25s ease;
 }
 
+/* Border and padding for sections */
 .section {
     border: 5px solid var(--visited-link-color);
     padding: 5%;
     margin: 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.gallery img {
-    animation-name: fadeIn;
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
-}
-
+/* Responsive font sizes for smaller devices */
 @media (max-width: 599px) {
     h1, h2, h3, p, ol, ul {
         font-size: 90%;
     }
 }
 
+/* Horizontal layout for navigation on larger screens */
 @media (min-width: 600px) {
     nav ul {
         flex-direction: row;
         justify-content: center;
+        margin-top: 0; /* Reset top margin */
     }
 
-    .gallery, .gallery3 {
+    /* Two column layout for medium-sized screens */
+    .gallery, .gallery3, .videoclass, .photogallery {
         grid-template-columns: repeat(2, 1fr); 
     }
 }
 
+/* Three column layout and adjusted padding for larger desktop views */
 @media (min-width: 1024px) {
-    .gallery, .gallery3 {
-        grid-template-columns: repeat(4, 1fr); 
+    .gallery, .gallery3, .videoclass, .photogallery {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     nav ul a {
-        padding: 20px;
+        padding: 20px; /* Increased padding for larger screens */
     }
 
-    .hero {
-        grid-template-columns: 0.5fr 1fr;
-    }
-
+    /* Larger text for hero section titles */
     .hero h2, .pets-name-img > h2 {
-        font-size: 4em;
-        padding: 50px;
+        font-size: 3em; /* Increased for desktop */
     }
 
+    /* Two column layout for various information sections */
     .info, .pets-name-img, .recipe {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
+/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
     .gallery img, .gallery3 img {
-        animation-duration: 0.5s; 
+        animation-duration: 0.5s; /* Shorter animation times for those who prefer reduced motion */
     }
-} 
+}
