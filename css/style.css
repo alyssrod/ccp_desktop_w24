@@ -1,71 +1,77 @@
 :root {
     --bg-color: #fffdf5;
     --text-color: #1e1e1e;
-    --visited-link-color: #555;
+    --visited-link-color: #1e1e1e;
 }
 
+/* Dark mode color overrides */
 .dark-mode {
     --bg-color: #363537;
     --text-color: #FAFAFA;
     --visited-link-color: #FAFAFA;
 }
 
+/* Global styles */
 body {
-    font-family: 'Futura', 'Roboto', sans-serif;
-    margin: 5px;
-    padding: 5%;
-    line-height: 1.5;
+    font-family: 'Poppins', 'Roboto', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+    margin: 10px;
+    padding: 5%;
+    line-height: 1.5;
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Skip to content link */
 .skip {
     position: absolute;
     left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
 }
 
 .skip:focus {
     position: static;
-    left: auto;
+    left: 10px;
     width: auto;
     height: auto;
-    overflow: visible;
-    z-index: 1000;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 2px #000;
-    text-align: center;
+    color: var(--text-color);
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 100;
 }
 
-/* Styling for navigation menu */
+/* Navigation styles */
 nav ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centered on mobile */
     padding: 0;
-    list-style-type: none;
-    margin-top: 20px; /* Adjusted top margin */
+    margin-top: 20px;
+    align-items: center; /* Center navigation links on mobile */
 }
 
-/* Style for navigation links */
 nav ul a {
+    justify-content: space-evenly;
+    padding: 2%;
     text-decoration: none;
     color: var(--text-color);
-    padding: 10px;
-    text-transform: uppercase; /* Added text styling */
+    font-weight: bold; /* Make the text bold as in provided CSS */
+    text-align: center;
+    width: 100%;
 }
 
-/* Specific styling for the current page navigation link */
+a:visited {
+    color: var(--visited-link-color);
+}
+
 nav ul a.active {
     background-color: #084200;
     color: white;
-    border-radius: 20px; /* Rounded corners like in the provided image */
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-style: italic;
 }
+
 
 /* Hover effects for navigation links */
 nav ul a:hover {
@@ -107,14 +113,17 @@ img, video {
     nav ul {
         flex-direction: row;
         justify-content: center;
-        margin-top: 0; /* Reset top margin */
+        align-items: center;
+        padding: 20px;
     }
 
-    /* Two column layout for medium-sized screens */
-    .gallery, .gallery3, .videoclass, .photogallery {
-        grid-template-columns: repeat(2, 1fr); 
+    nav ul a {
+        margin-right: 10px; /* Spacing between navigation links */
     }
-}
+
+    nav ul a:last-child {
+        margin-right: 0; /* No margin for the last navigation link */
+    }
 
 /* Three column layout and adjusted padding for larger desktop views */
 @media (min-width: 1024px) {
