@@ -96,9 +96,6 @@ img {
 
 }
 
-img:hover {
-    box-shadow: 5px 5px 1px #2e2e2e;
-}
 
 .gallery {
     display: grid;
@@ -106,7 +103,6 @@ img:hover {
     grid-gap: 20px;
 }
 
-/* make the image smaller on bigger screens */
 .gallery img {
     width: 100%;
     border: #2e2e2e 2px solid;
@@ -243,7 +239,6 @@ img:hover {
     }
 }
 
-/* dark mode code */
 
 :root {
     --bg-color: #fffdf5;
