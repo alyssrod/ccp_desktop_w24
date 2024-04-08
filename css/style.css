@@ -150,7 +150,7 @@ ol {
     text-align: center;
 }
 
-.gallery img, .hero img, .pets-name-img > h2 {
+.gallery img, .gallery3 img, .hero img, .pets-name-img > h2 {
     width: 100%;
     transition: transform 0.25s ease;
 }
@@ -175,15 +175,13 @@ ol {
 @media (min-width: 600px) {
     body, .gallery, nav, nav ul, .hero, .info {
         padding: 20px 5%;
+        .gallery, .gallery3 {
+            grid-template-columns: repeat(3, 1fr); 
+        }
     }
-
-    .gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 @media (min-width: 1024px) {
-    .gallery {
+    .gallery, .gallery3 {
         grid-template-columns: repeat(4, 1fr); }
     
     nav ul {
@@ -208,7 +206,7 @@ ol {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .gallery img {
+    .gallery img, .gallery3 img {
         animation-duration: 0.5s; 
     }
 }
