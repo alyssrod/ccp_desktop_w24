@@ -1,7 +1,7 @@
 :root {
     --bg-color: #fffdf5;
     --text-color: #1e1e1e;
-    --visited-link-color: #555; 
+    --visited-link-color: #555;
 }
 
 .dark-mode {
@@ -45,6 +45,7 @@ body {
 nav ul {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centered on mobile */
     padding: 0;
     list-style-type: none;
 }
@@ -61,34 +62,23 @@ nav ul a.active, nav ul a:hover {
     background-color: #f0f0f0;
 }
 
-.gallery, .section, .hero, .info, .pets-name-img, .recipe {
+.gallery, .section, .hero, .info, .pets-name-img, .recipe, .videoclass, .photogallery {
     display: grid;
     grid-gap: 20px;
     text-align: center;
     grid-template-columns: 1fr; 
 }
 
-.gallery img, .hero img, .pets-name-img > h2 {
-    width: 100%;
+img, video {
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
-    transition: transform 0.25s ease;
 }
 
 .section {
     border: 5px solid var(--visited-link-color);
     padding: 5%;
     margin: 20px;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.gallery img {
-    animation-name: fadeIn;
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
 }
 
 @media (max-width: 599px) {
@@ -103,31 +93,30 @@ nav ul a.active, nav ul a:hover {
         justify-content: center;
     }
 
-    .gallery, .gallery3 {
+    .gallery, .gallery3, .videoclass, .photogallery {
         grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media (min-width: 1024px) {
-    .gallery, .gallery3 {
-        grid-template-columns: repeat(4, 1fr); 
+    .gallery, .gallery3, .videoclass, .photogallery {
+        grid-template-columns: repeat(3, 1fr); 
     }
 
     nav ul a {
-        padding: 20px;
+        padding: 20px; 
     }
 
     .hero {
-        grid-template-columns: 0.5fr 1fr;
+        grid-template-columns: 1fr;
     }
 
     .hero h2, .pets-name-img > h2 {
-        font-size: 4em;
-        padding: 50px;
+        font-size: 3em;
     }
 
     .info, .pets-name-img, .recipe {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr; 
     }
 }
 
@@ -135,4 +124,4 @@ nav ul a.active, nav ul a:hover {
     .gallery img, .gallery3 img {
         animation-duration: 0.5s; 
     }
-} 
+}
