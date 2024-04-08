@@ -11,117 +11,118 @@
 }
 
 body {
-    font-family: 'Futura', 'Roboto', sans-serif;
-    margin: 5px;
-    padding: 5%;
-    line-height: 1.5;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.skip {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-.skip:focus {
-    position: static;
-    left: auto;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    z-index: 1000;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 2px #000;
-    text-align: center;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centered on mobile */
-    padding: 0;
-    list-style-type: none;
-}
-
-nav ul a {
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 10px;
-}
-
-nav ul a.active, nav ul a:hover {
-    color: var(--visited-link-color);
-    font-weight: bold;
-    background-color: #f0f0f0;
-}
-
-.gallery, .section, .hero, .info, .pets-name-img, .recipe, .videoclass, .photogallery {
-    display: grid;
-    grid-gap: 20px;
-    text-align: center;
-    grid-template-columns: 1fr; 
-}
-
-img, video {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.section {
-    border: 5px solid var(--visited-link-color);
-    padding: 5%;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background-color: #F4EBFF;
     margin: 20px;
+    font-size: 1em; 
 }
 
-@media (max-width: 599px) {
-    h1, h2, h3, p, ol, ul {
-        font-size: 90%;
+.skiptomain a {
+    position: absolute;
+    display: block;
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+    top: 25px;
+    left: -1000px;
+    font-size: 0.5em; 
+}
+
+.skiptomain a:focus {
+    left: 10px;
+}
+
+.currentpage {
+    background-color: #084200;
+    text-transform: uppercase;
+    font-style: italic;
+    color: white;
+    letter-spacing: 0.3em;
+}
+
+img, .main_img {
+    width: 100%; 
+    height: auto;
+}
+
+nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%; 
+    row-gap: 6px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+nav > a {
+    background-color: #FFFFFF;
+    color: #084200;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, p, a, .notice, .backtotop, ul, li, .recipe_points, .instructions {
+}
+
+.photo_gallery {
+    background: #FFFFFF;
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.photo_gallery > * {
+    width: 100%; 
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 640px) {
+    body {
+        font-size: 1.3em;
+        margin: 0 30px; 
+    }
+
+    nav {
+        grid-template-columns: repeat(4, 1fr); 
+        column-gap: 20px;
+    }
+
+    .item_desc {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 20px;
+    }
+
+    .item_desc > img {
+        width: 100%;
+    }
+
+    .photo_gallery {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
     }
 }
 
-@media (min-width: 600px) {
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
+@media only screen and (min-width: 1025px) {
+    div.index_div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
     }
 
-    .gallery, .gallery3, .videoclass, .photogallery {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-@media (min-width: 1024px) {
-    .gallery, .gallery3, .videoclass, .photogallery {
-        grid-template-columns: repeat(3, 1fr); 
+    div.index_div > p:last-child {
+        grid-column: 1 / -1; 
     }
 
-    nav ul a {
-        padding: 20px; 
+    div.index_div > p:last-child:hover {
+        background: #084200;
+        color: #fff;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
+    .item_desc {
+        grid-template-columns: 1fr 1fr 1fr;
     }
-
-    .hero h2, .pets-name-img > h2 {
-        font-size: 3em;
-    }
-
-    .info, .pets-name-img, .recipe {
-        grid-template-columns: 1fr 1fr; 
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .gallery img, .gallery3 img {
-        animation-duration: 0.5s; 
-    }
-}
