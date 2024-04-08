@@ -148,7 +148,6 @@ ol {
     display: grid;
     grid-gap: 20px;
     text-align: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
 }
 
 .gallery img, .hero img, .pets-name-img > h2 {
@@ -174,12 +173,12 @@ ol {
 }
 
 @media (min-width: 600px) {
-    body, nav, nav ul, .hero, .info {
+    body, .gallery, nav, nav ul, .hero, .info {
         padding: 20px 5%;
     }
-    
+
     .gallery {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
