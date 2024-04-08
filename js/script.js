@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const text = 'Common Class Project';
-    const typewriterText = document.getElementById('typewriter');
+const typewriterText = document.getElementById('typewriter');
+if (typewriterText) {
     let index = 0;
-
     function typeWriter() {
         if (index < text.length) {
             typewriterText.innerHTML += text.charAt(index);
@@ -21,6 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(typeWriter, 100);
         }
     }
-
     typeWriter();
 });
